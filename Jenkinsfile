@@ -1,3 +1,3 @@
-node {
+node('docker') {
   sh "echo success"
 }
