@@ -1,4 +1,3 @@
 node('docker') {
-    sh('docker -v')
-  }	
+  sh('docker -v')
 }
