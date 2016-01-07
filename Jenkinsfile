@@ -1,3 +1,3 @@
-node('docker') {
+node {
   sh('docker -v')
 }
