@@ -3,7 +3,7 @@ node {
 
   // Run tests
   stage 'Go tests'
-  docker.withRegistry('http://192.168.0.23:5000') {
+  docker.withRegistry('https://registry.polygon.duckdns.org:5000') {
     docker.image('golang-build').inside {
       sh('whoami')
       sh('go get -d -v')
