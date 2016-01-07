@@ -3,9 +3,11 @@ node {
 
   // Run tests
   stage 'Go tests'
-  docker.image('golang').inside {
-    sh('whoami')
-    sh('go get -d -v')
-    sh('go test')
-  }	
+  docker.withRegistry('https://192.168.0.23:5000') {
+    docker.image('golang-build').inside {
+      sh('whoami')
+      sh('go get -d -v')
+      sh('go test')
+    }
+  }
 }
