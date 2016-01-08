@@ -11,4 +11,9 @@ node {
     sh('go get -d -v')
     sh('go test')
   }
+
+  stage 'Build Docker image'
+  def img = docker.build("registry.polygon.duckdns.org:5000/gceme:${env.BUILD_TAG}")
+  img.push()
+  
 }
