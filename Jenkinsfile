@@ -14,12 +14,6 @@ node {
 
   stage 'Build Docker image'
   def img = docker.build("registry.polygon.duckdns.org:5000/gceme:${env.BUILD_TAG}")
+  img.tag('latest')
   img.push()
-
-  stage 'Deploy to QA cluster'
-  docker.image('registry.polygon.duckdns.org:5000/jenkins/kubectl').inside('--net=host') {
-        sh("kubectl --kubeconfig=/kube/config get nodes")
-	//sh("kubectl --namespace=staging --kubeconfig=/kube/config rollingupdate gceme-frontend --image=${img.id} --update-period=5s")
-	sh("kubectl --namespace=staging --kubeconfig=/kube/config rollingupdate gceme-backend --image=${img.id} --update-period=5s")
-  }
 }
