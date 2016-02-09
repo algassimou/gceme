@@ -11,7 +11,7 @@ node {
     //sh('go get -d -v')
     //sh('go test')
     sh 'ls'
-    sh './test.sh'
+    //sh './test.sh'
   }
 
   // stage 'Build Docker image'
