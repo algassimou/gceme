@@ -8,12 +8,13 @@ node {
   }
 
   docker.image('registry.polygon.duckdns.org:5000/jenkins/golang-build2').inside {
-    sh('go get -d -v')
-    sh('go test')
+    //sh('go get -d -v')
+    //sh('go test')
+    sh 'test.sh'
   }
 
-  stage 'Build Docker image'
-  def img = docker.build("registry.polygon.duckdns.org:5000/gceme:${env.BUILD_TAG}")
-  img.push()
-  img.push("latest")
+  // stage 'Build Docker image'
+  // def img = docker.build("registry.polygon.duckdns.org:5000/gceme:${env.BUILD_TAG}")
+  // img.push()
+  // img.push("latest")
 }
