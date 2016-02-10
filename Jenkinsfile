@@ -8,9 +8,6 @@ node {
   }
 
   docker.image('registry.polygon.duckdns.org:5000/jenkins/golang-build2').inside {
-    //sh('go get -d -v')
-    //sh('go test')
-    //sh 'ls'
     sh './test.sh'
   }
 
