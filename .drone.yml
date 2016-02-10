@@ -6,10 +6,10 @@ build:
 
 publish:
   docker:
-    registry: https://registry.polygon.duckdns.org:5000
+    registry: registry.polygon.duckdns.org:5000
     username: adiallo
     password: alcapone1
     email: algassimou.diallo@gmail.com
-    repo: registry.polygon.duckdns.org:5000/gceme
+    repo: gceme
     tag: test
 
