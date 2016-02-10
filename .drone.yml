@@ -3,3 +3,13 @@ build:
   commands:
     - go get -d -v
     - go test
+
+publish:
+  docker:
+    registry: https://registry.polygon.duckdns.org:5000
+    username: adiallo
+    password: alcapone1
+    email: algassimou.diallo@gmail.com
+    repo: registry.polygon.duckdns.org:5000/gceme
+    tag: test
+
