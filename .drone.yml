@@ -11,5 +11,6 @@ publish:
     password: alcapone1
     email: algassimou.diallo@gmail.com
     repo: gceme
-    tag: test
-
+    tag: $$TAG
+    when:
+      event: tag
