@@ -7,9 +7,9 @@ build:
 publish:
   docker:
     registry: registry.polygon.duckdns.org:5000
-    username: adiallo
-    password: alcapone1
-    email: algassimou.diallo@gmail.com
+    username: $$REGISTRY_USERNAME
+    password: $$REGISTRY_PASSWORD
+    email: $$REGISTRY_EMAIL
     repo: gceme
     tag:
       - latest
