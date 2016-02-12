@@ -1,15 +1,16 @@
 build:
   image: golang
   commands:
-    - go get -d -v
-    - go test
+    - make deps
+    - make build
+    - make test
 
 publish:
   docker:
     registry: registry.polygon.duckdns.org:5000
-    username: $$REGISTRY_USERNAME
-    password: $$REGISTRY_PASSWORD
-    email: $$REGISTRY_EMAIL
+    username: $$DOCKER_USERNAME
+    password: $$DOCKER_PASSWORD
+    email: $$DOCKER_EMAIL
     repo: gceme
     tag:
       - latest
