@@ -2,9 +2,6 @@
 
 EXECUTABLE ?= gceme
 IMAGE ?= gceme
-CI_BUILD_NUMBER ?= 0
-
-LDFLAGS = -X "main.buildDate=$(shell date -u '+%Y-%m-%d %H:%M:%S %Z')"
 
 clean:
 	go clean -i
@@ -19,6 +16,6 @@ docker: build
 	docker build --rm -t $(IMAGE) .
 
 $(EXECUTABLE): $(wildcard *.go)
-	GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -o $@ -ldflags '-s -w $(LDFLAGS)'
+	GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -o $@
 
 build: $(EXECUTABLE)
