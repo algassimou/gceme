@@ -8,9 +8,6 @@ build:
 publish:
   docker:
     registry: registry.polygon.duckdns.org:5000
-    username: $$DOCKER_USERNAME
-    password: $$DOCKER_PASSWORD
-    email: $$DOCKER_EMAIL
     repo: backend
     tag:
       - latest
